@@ -1,7 +1,10 @@
 import React from 'react'
 
-export function ParticipantItem(props) {
+export function ParticipantItem({ participant }) {
   return (
-    <li>{props.participant.name} {props.participant.surname}</li>
+    <tr>
+      <td>{participant.name}</td>
+      <td>{participant.surname}</td>
+    </tr>
   )
 }

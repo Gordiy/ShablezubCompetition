@@ -1,6 +1,7 @@
 import React from 'react'
-import {ParticipantItem} from './ParticipantItem'
-import {Estimate, Participant} from './entity'
+import {ParticipantItem} from './'
+import {Estimate, Participant} from './entities'
+import Table from 'react-bootstrap/Table';
 
 export function ParticipantsList() {
   const entity = new Estimate(45, 50, 48)
@@ -10,12 +11,20 @@ export function ParticipantsList() {
   ];
 
   return (
-    <ul>
-      {
-        participants.map((participant) => {
-          return <ParticipantItem key={`${participant.name} ${participant.surname}`} participant={participant}/>
-        })
-      }
-    </ul>
+    <Table striped bordered hover variant="dark">
+      <thead>
+        <tr>
+          <th>Ім'я</th>
+          <th>Прізвище</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          participants.map((participant) => {
+            return <ParticipantItem key={`${participant.name} ${participant.surname}`} participant={participant}/>
+          })
+        }
+      </tbody>
+    </Table>
   )
 }
