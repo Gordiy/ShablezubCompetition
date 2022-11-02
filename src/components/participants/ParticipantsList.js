@@ -1,30 +1,27 @@
-import React from 'react'
-import {ParticipantItem} from './'
-import {Estimate, Participant} from './entities'
-import Table from 'react-bootstrap/Table';
+import './styles/ParticipantList.css';
+import React from 'react';
+import {ParticipantItem} from './';
+import {Estimate, BaseParticipant} from './entities'
+import Carousel from 'react-bootstrap/Carousel';
 
 export function ParticipantsList() {
   const entity = new Estimate(45, 50, 48)
   const participants = [
-    new Participant('Hordii', 'Rushynets', entity),
-    new Participant('Slavik', 'Pikuk', entity)
+    new BaseParticipant('Hordii', 'Rushynets', entity),
+    new BaseParticipant('Slavik', 'Pikuk', entity)
   ];
 
   return (
-    <Table striped bordered hover variant="dark">
-      <thead>
-        <tr>
-          <th>Ім'я</th>
-          <th>Прізвище</th>
-        </tr>
-      </thead>
-      <tbody>
-        {
-          participants.map((participant) => {
-            return <ParticipantItem key={`${participant.name} ${participant.surname}`} participant={participant}/>
-          })
-        }
-      </tbody>
-    </Table>
+    <>
+      <Carousel>
+        <Carousel.Item interval={1500}>
+          {
+            participants.map((participant) => {
+              return <ParticipantItem key={`${participant.name} ${participant.surname}`} participant={participant}/>
+            })
+          }
+        </Carousel.Item>
+      </Carousel>
+    </>
   )
 }

@@ -1,2 +1,3 @@
 export * from './estimate.entity';
-export * from './paticipant.entity'
+export * from './baseParticipant.entity';
+export * from './participant.entity';

@@ -1,12 +1,17 @@
 import './App.css';
-import { ParticipantsList } from './components/participants/ParticipantsList';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { ParticipantsList, CurrentParticipantItem } from './components/participants';
 import React from "react"
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Participant, Estimate } from './components/participants/entities';
 
 function App() {
+  const estimate = new Estimate(40, 45, 48)
+  const participant = new Participant('Petro', 'Pikulik', estimate, '15 вересня 2005 року', 'Кучинський А. Ю.', 5, 'Яструб', 'Львів')
+
   return (
     <div className="App">
       <Navbar variant="dark" bg="dark" expand="lg" style={{'margin-bottom':'5px'}} >
@@ -41,6 +46,7 @@ function App() {
         </Container>
       </Navbar>
       
+      <CurrentParticipantItem participant={participant}/>
       <ParticipantsList/>
     </div>
   );
