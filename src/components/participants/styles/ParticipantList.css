@@ -1,3 +1,11 @@
 .carousel-control-prev, .carousel-control-next {
     display: none;
 }
+
+.alert {
+    margin-bottom: 5px;
+}
+
+.current-participant, .next-participant {
+    margin-bottom: 15px;
+}

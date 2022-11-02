@@ -12,16 +12,14 @@ export function ParticipantsList() {
   ];
 
   return (
-    <>
-      <Carousel>
-        <Carousel.Item interval={1500}>
-          {
-            participants.map((participant) => {
-              return <ParticipantItem key={`${participant.name} ${participant.surname}`} participant={participant}/>
-            })
-          }
-        </Carousel.Item>
-      </Carousel>
-    </>
+    <Carousel>
+      <Carousel.Item interval={1500}>
+        {
+          participants.map((participant) => {
+            return <ParticipantItem key={`${participant.name} ${participant.surname}`} participant={participant}/>
+          })
+        }
+      </Carousel.Item>
+    </Carousel>
   )
 }

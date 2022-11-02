@@ -3,7 +3,7 @@ import Alert from 'react-bootstrap/Alert';
 
 export function CurrentParticipantItem({participant}) {
   return (
-    <Alert variant="dark">
+    <Alert variant="dark" className='current-participant'>
       <Alert.Heading>{participant.name} {participant.surname}</Alert.Heading>
       <p>
         Рівень майстерності: {participant.degree} <br/>

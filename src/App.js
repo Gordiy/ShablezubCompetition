@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { ParticipantsList, CurrentParticipantItem } from './components/participants';
+import { ParticipantsList, CurrentParticipantItem, NextParticipantItem } from './components/participants';
 import React from "react"
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -47,6 +47,7 @@ function App() {
       </Navbar>
       
       <CurrentParticipantItem participant={participant}/>
+      <NextParticipantItem participant={participant}/>
       <ParticipantsList/>
     </div>
   );
